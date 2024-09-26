@@ -321,6 +321,11 @@ body.active { overflow: hidden; }
   display: flex;
   align-items: center;
   gap: 5px;
+  transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Increase the size slightly on hover */
 }
 
 .nav-toggle-btn .line {
