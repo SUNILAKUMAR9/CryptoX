@@ -106,11 +106,20 @@ ion-icon { display: block; }
 img { height: auto; }
 
 button {
-  background: none;
+  background-color: #1c0783; /* Gold color to make it pop */
+  color: black;
+  padding: 15px 30px;
+  font-size: 16px;
   border: none;
-  font: inherit;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
+
+button:hover {
+  background-color: #e0a80d; /* Slightly darker on hover */
+}
+
 
 ion-icon { pointer-events: none; }
 
@@ -127,9 +136,12 @@ html {
 body {
   background-color: var(--eerie-black-2);
   color: var(--cadet-blue-crayola);
-  font-size: 1.6rem;
-  line-height: 1.4;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  font-size: 18px; /* This sets the base font size to 18px */
 }
+
+
 
 body.active { overflow: hidden; }
 
