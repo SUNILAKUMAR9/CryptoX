@@ -89,3 +89,43 @@ const scrollReveal = function () {
 scrollReveal();
 
 addEventOnElem(window, "scroll", scrollReveal);
+
+// Get the sell form
+const sellForm = document.getElementById('sellCryptoForm');
+
+// Add event listener to handle form submission
+sellForm.addEventListener('submit', function(event) {
+  event.preventDefault();  // Prevent form from submitting the traditional way
+
+  // Get form data
+  const cryptoType = document.getElementById('cryptoType').value;
+  const amount = document.getElementById('amount').value;
+  const price = document.getElementById('price').value;
+
+  // Perform simple validation (ensuring values are not empty)
+  if (cryptoType && amount > 0 && price > 0) {
+    alert(`You are selling ${amount} ${cryptoType} for $${price} per unit.`);
+    // Here you can add further functionality such as saving the data to a backend or updating a database
+  } else {
+    alert('Please fill in all the fields correctly.');
+  }
+});
+
+// Wallet modal functionality (existing code)
+var modal = document.getElementById("walletModal");
+var btn = document.getElementById("walletBtn");
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
