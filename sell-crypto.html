@@ -3,57 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sell Crypto - CryptoX</title>
-    <link rel="stylesheet" href="css/sell-crypto.css">
+    <title>CryptoX Platform</title>
+    <link rel="stylesheet" href="sell-crypto.css">
 </head>
 <body>
+    <header>
+        <h1>CryptoX Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="buy-crypto.html">Buy Crypto</a></li>
+                <li><a href="markets">Markets</a></li>
+                <li><a href="sell-crypto.html">Sell Crypto</a></li>
+                <li><a href="#">Wallet</a></li>
+            </ul>
+        </nav>
+        <div class="dark-mode-toggle">
+            <label for="darkModeSwitch">Dark Mode</label>
+            <input type="checkbox" id="darkModeSwitch" onclick="toggleDarkMode()">
+            <input type="checkbox" id="dark-mode-toggle" />
+        </div>
+    </header>
 
-  <!-- Navigation bar -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="buy-crypto.html">Buy Crypto</a></li>
-      <li><a href="markets.html">Markets</a></li>
-      <li><a href="sell-crypto.html">Sell Crypto</a></li>
-      <li><a id="walletBtn" href="#">Wallet</a></li>
-    </ul>
-  </nav>
-
-  <!-- Sell Crypto page content -->
-  <h1>Sell Cryptocurrency</h1>
-  <p>Use this form to sell your cryptocurrency securely.</p>
-
-  <!-- Sell Crypto Form -->
-  <form id="sellCryptoForm">
-    <label for="cryptoType">Select Cryptocurrency:</label>
-    <select id="cryptoType" name="cryptoType" required>
-      <option value="Bitcoin">Bitcoin (BTC)</option>
-      <option value="Ethereum">Ethereum (ETH)</option>
-      <option value="Litecoin">Litecoin (LTC)</option>
-      <option value="Dogecoin">Dogecoin (DOGE)</option>
-    </select><br><br>
-
-    <label for="amount">Amount to Sell:</label>
-    <input type="number" id="amount" name="amount" min="0.0001" step="0.0001" required><br><br>
-
-    <label for="price">Selling Price per Unit:</label>
-    <input type="number" id="price" name="price" step="0.01" required><br><br>
-
-    <button type="submit">Sell Now</button>
-  </form>
-
-  <!-- Wallet modal (Hidden by default) -->
-  <div id="walletModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Your Wallet</h2>
-      <p>Wallet functionality coming soon!</p>
+    <!-- Cryptocurrency Conversion Section -->
+    <div class="crypto-converter">
+        <h2>Buy Cryptocurrency</h2>
+        <form>
+            <label for="crypto-select">Choose cryptocurrency:</label>
+            <select id="crypto-select">
+                <option value="ETH">Ethereum (ETH)</option>
+                <option value="BTC">Bitcoin (BTC)</option>
+                <option value="ADA">Cardano (ADA)</option>
+            </select>
+            <label for="crypto-amount">Amount (in USD):</label>
+            <input type="number" id="crypto-amount" placeholder="Enter amount">
+            <button type="button" onclick="convertCrypto()">Convert</button>
+        </form>
+        <p id="conversion-result"></p>
     </div>
-  </div>
 
-  <!-- Link to JavaScript -->
-  <script src="js/script.js"></script>
+    <!-- Portfolio Section -->
+    <div class="portfolio-section">
+        <h2>Your Portfolio</h2>
+        <table id="portfolio">
+            <thead>
+                <tr>
+                    <th>Cryptocurrency</th>
+                    <th>Amount</th>
+                    <th>Value (USD)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Portfolio data will be dynamically loaded -->
+            </tbody>
+        </table>
+    </div>
+ 
+    <script>
+        // Get the checkbox element
+        const toggle = document.getElementById('dark-mode-toggle');
+      
+        // Check if dark mode was previously enabled
+        if (localStorage.getItem('darkMode') === 'enabled') {
+          document.body.classList.add('dark-mode');
+          toggle.checked = true; // Ensure the toggle is checked
+        }
+      
+        // Add event listener for the toggle
+        toggle.addEventListener('change', function() {
+          if (toggle.checked) {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled'); // Save preference
+          } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'disabled'); // Save preference
+          }
+        });
+      </script>
+      
+    <!-- Watchlist Section -->
+    <div class="watchlist-section">
+        <h2>Your Watchlist</h2>
+        <form id="watchlist-form">
+            <label for="watchlist-crypto">Choose cryptocurrency:</label>
+            <select id="watchlist-crypto">
+                <option value="ETH">Ethereum (ETH)</option>
+                <option value="BTC">Bitcoin (BTC)</option>
+                <option value="ADA">Cardano (ADA)</option>
+            </select>
+            <button type="button" onclick="addToWatchlist()">Add to Watchlist</button>
+        </form>
+        <ul id="watchlist">
+            <!-- Watchlist items will be dynamically loaded -->
+        </ul>
+    </div>
+
+    <!-- Price Alerts Section -->
+    <div class="price-alert-section">
+        <h2>Set Price Alerts</h2>
+        <form id="price-alert-form">
+            <label for="alert-crypto">Choose cryptocurrency:</label>
+            <select id="alert-crypto">
+                <option value="ETH">Ethereum (ETH)</option>
+                <option value="BTC">Bitcoin (BTC)</option>
+                <option value="ADA">Cardano (ADA)</option>
+            </select>
+            <label for="alert-price">Price Target (USD):</label>
+            <input type="number" id="alert-price" placeholder="Enter target price">
+            <button type="button" onclick="setPriceAlert()">Set Alert</button>
+        </form>
+        <ul id="alerts">
+            <!-- Alerts will be dynamically loaded -->
+        </ul>
+    </div>
+
+    <!-- Transaction History Section -->
+    <div class="transaction-history-section">
+        <h2>Transaction History</h2>
+        <table id="transaction-history">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Cryptocurrency</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Transaction history will be dynamically loaded -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- News Section -->
+    <div class="news-section">
+        <h2>Crypto News</h2>
+        <div id="news">
+            <!-- Crypto news will be dynamically loaded -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 CryptoX Platform - All Rights Reserved</p>
+    </footer>
+
+    <script src="script2.js"></script>
 </body>
 </html>
-
-

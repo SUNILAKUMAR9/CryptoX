@@ -1,0 +1,247 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Dark Mode Styling */
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode-toggle {
+  text-align: right;
+  padding: 10px;
+}
+
+.dark-mode table, .dark-mode th, .dark-mode td {
+  border-color: white;
+}
+
+/* Table Styling */
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+/* Portfolio Section */
+.portfolio-section {
+  margin: 20px;
+  text-align: center;
+}
+
+/* Watchlist Section */
+.watchlist-section {
+  margin: 20px;
+  text-align: center;
+}
+
+.watchlist-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Price Alerts Section */
+.price-alert-section {
+  margin: 20px;
+  text-align: center;
+}
+
+/* Transaction History Section */
+.transaction-history-section {
+  margin: 20px;
+  text-align: center;
+}
+
+/* News Section */
+.news-section {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.news-item {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  margin-top: 20px;
+}
+/* General Color Scheme */
+body {
+  background-color: #F4F4F9;
+  color: #333333;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #3E4E88;
+}
+
+a {
+  color: #4CAF50;
+}
+
+a:hover {
+  color: #F9A825;
+}
+/* Button Styling */
+button, .btn {
+  background-color: #4CAF50;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #3E4E88;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+/* Input Fields */
+input[type="text"], input[type="number"], select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+  border-color: #4CAF50;
+  box-shadow: 0px 4px 10px rgba(76, 175, 80, 0.2);
+}
+
+/* Dropdowns */
+select {
+  background-color: #FFFFFF;
+  color: #333333;
+  font-weight: bold;
+}
+
+select option {
+  background-color: #F4F4F9;
+}
+/* Section Background with Gradient */
+section {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F4F4F9 100%);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+/* Navbar */
+nav {
+  background-color: #3E4E88;
+  padding: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+nav a:hover {
+  background-color: #4CAF50;
+  border-radius: 5px;
+}
+/* Transaction Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+table tr:nth-child(even) {
+  background-color: #F4F4F9;
+}
+
+table tr:hover {
+  background-color: #E0F7FA;
+}
+/* Watchlist Hover Effect */
+.watchlist-item {
+  padding: 10px;
+  background-color: #FFFFFF;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease;
+}
+
+.watchlist-item:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+/* Dark Mode */
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;  /* Dark background */
+  color: #ffffff;             /* Light text color */
+}
+.dark-mode .header, 
+.dark-mode .nav, 
+.dark-mode .button {
+  background-color: #333;
+  color: #fff;
+}
+nav.dark-mode {
+  background-color: #1C1C1C;
+}
+
+button.dark-mode {
+  background-color: #F9A825;
+  color: #333333;
+}
+
+input.dark-mode, select.dark-mode {
+  background-color: #444444;
+  color: #F4F4F9;
+}
